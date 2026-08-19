@@ -3,155 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tea Trek Travel - Raigad</title>
+    <title>Trek & Travel with Sakhi - Raigad</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        :root {
-            --primary: #e67e22;
-            --secondary: #2c3e50;
-            --light: #f8f9fa;
+        :root { 
+            --primary: #e67e22; 
+            --secondary: #2c3e50; 
+            --light: #f8f9fa; 
+            --yellow: #f1c40f; /* पिवळा बॅकग्राउंड */
         }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            background-color: var(--light);
-            color: #333;
-        }
-
-        /* Language Switcher */
-        .lang-bar {
-            background: #fff;
-            padding: 10px 5%;
+        
+        body { font-family: 'Poppins', sans-serif; margin: 0; background-color: var(--light); color: #333; }
+        
+        /* Yellow Header Patch - Merged Style */
+        .top-header {
+            background-color: var(--yellow);
+            padding: 8px 5%;
             display: flex;
-            justify-content: flex-end;
-            gap: 10px;
+            justify-content: space-between;
+            align-items: center;
             position: sticky;
             top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1001;
+            /* बॉर्डर किंवा शॅडो कमी केली आहे जेणेकरून ते नैसर्गिक वाटेल */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            height: 55px; /* लोगो थोडा मोठा केला आहे */
+            width: auto;
+            /* बॉर्डर काढून टाकली आहे */
+            border: none; 
+            background: transparent;
+            object-fit: contain;
+        }
+
+        .brand-name {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .lang-bar {
+            display: flex;
+            gap: 5px;
         }
 
         .lang-btn {
-            border: 1px solid var(--primary);
-            background: transparent;
-            padding: 5px 15px;
+            border: 1px solid rgba(44, 62, 80, 0.3);
+            background: rgba(255, 255, 255, 0.5);
+            padding: 3px 10px;
             cursor: pointer;
-            border-radius: 20px;
+            border-radius: 12px;
             font-weight: bold;
-            color: var(--primary);
+            font-size: 0.75rem;
+            color: #2c3e50;
         }
 
         .lang-btn.active {
-            background: var(--primary);
+            background: #2c3e50;
             color: white;
+            border-color: #2c3e50;
         }
 
-        /* Desktop Optimized Banner */
-        header {
+        /* Banner Section */
+        header { 
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
                         url('https://lh3.googleusercontent.com/d/1VI3EcoO-VUXnt18q4o5_nqWTbqrOkELk');
-            background-size: cover;
-            background-position: center;
-            background-attachment: scroll; /* Desktop वर स्मूथ दिसण्यासाठी */
-            color: white;
-            text-align: center;
-            padding: 120px 20px;
-            min-height: 500px; /* डेस्कटॉप बॅनरसाठी उंची वाढवली आहे */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            background-size: cover; background-position: center; color: white; text-align: center; 
+            padding: 110px 20px; min-height: 450px; display: flex; flex-direction: column; justify-content: center; align-items: center; 
         }
 
-        @media (max-width: 768px) {
-            header { min-height: 300px; padding: 60px 20px; }
-        }
-
-        .price-tag {
-            background: #c0392b;
-            color: white;
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-size: 1.6rem;
-            font-weight: bold;
-            margin-top: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-
-        /* Container */
+        .price-tag { background: #c0392b; color: white; padding: 12px 30px; border-radius: 50px; font-size: 1.6rem; font-weight: bold; margin-top: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
         .container { max-width: 1000px; margin: -60px auto 50px; background: white; border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; }
-
-        /* City Selection */
+        
         .city-selector { display: flex; gap: 15px; margin: 30px 0; justify-content: center; }
         .select-btn { flex: 1; padding: 15px; border: 2px solid #ddd; background: white; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; }
         .select-btn.active { border-color: var(--primary); background: #fff9f4; color: var(--primary); }
 
         .itinerary-box { display: none; }
         .itinerary-box.active { display: block; animation: fadeIn 0.5s; }
-
+        
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 30px; }
+        @media (max-width: 768px) { 
+            .grid { grid-template-columns: 1fr; } 
+            header { min-height: 250px; padding: 50px 20px; }
+            .brand-name { font-size: 0.85rem; }
+            .logo-img { height: 45px; }
+        }
+        
+        .card { padding: 25px; border-radius: 12px; background: #fdfdfd; border: 1px solid #eee; }
         .timeline { list-style: none; padding: 0; }
         .timeline li { padding-left: 30px; border-left: 2px solid #eee; position: relative; padding-bottom: 20px; }
         .timeline li::before { content: "\f111"; font-family: "Font Awesome 5 Free"; font-weight: 900; position: absolute; left: -9px; top: 0; background: white; color: var(--primary); font-size: 14px; }
 
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 40px; }
-        @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
-
-        .card { padding: 25px; border-radius: 12px; background: #fdfdfd; border: 1px solid #eee; }
-
-        .cta { text-align: center; margin-top: 50px; padding: 40px; background: var(--secondary); color: white; border-radius: 15px; }
-        .btn-wa { background: #25d366; color: white; padding: 18px 35px; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: bold; font-size: 1.2rem; margin-top: 20px; transition: 0.3s; }
-        .btn-wa:hover { transform: scale(1.05); }
+        .cta { text-align: center; margin-top: 40px; padding: 40px; background: var(--secondary); color: white; border-radius: 15px; }
+        .btn-wa { background: #25d366; color: white; padding: 15px 35px; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: bold; font-size: 1.2rem; margin-top: 20px; }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
-    <div class="lang-bar">
-        <button class="lang-btn" onclick="setLanguage('en')">English</button>
-        <button class="lang-btn active" onclick="setLanguage('mr')">मराठी</button>
+    <!-- Yellow Header Patch -->
+    <div class="top-header">
+        <div class="logo-container">
+            <!-- Logo directly merged with yellow bg -->
+            <img src="https://lh3.googleusercontent.com/d/1GQsrtJzOnmEw8ZfofivAcatdMKWcMFTO" alt="Logo" class="logo-img">
+            <span class="brand-name">Trek & Travel with Sakhi</span>
+        </div>
+        <div class="lang-bar">
+            <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+            <button class="lang-btn active" id="mr-btn" onclick="setLanguage('mr')">मराठी</button>
+        </div>
     </div>
 
     <header>
-        <p style="color: #f1c40f; font-weight: bold; font-size: 1.3rem; letter-spacing: 1px;">🌿 Tea Trek Travel with Sakhi 🌿</p>
-        <h1 id="main-title" style="font-size: 3rem; margin: 10px 0;">दुर्गराज किल्ले रायगड</h1>
-        <p id="sub-title" style="font-size: 1.2rem;">अभ्यासपूर्ण भटकंती - २३ ऑगस्ट २०२६</p>
+        <h1 id="main-title" style="font-size: 3rem; margin: 0;">दुर्गराज किल्ले रायगड</h1>
+        <p id="sub-title" style="font-size: 1.2rem; margin-top: 10px;">अभ्यासपूर्ण भटकंती - २३ ऑगस्ट २०२६</p>
         <div class="price-tag" id="price">₹१४९९/- प्रति व्यक्ती</div>
     </header>
 
     <div class="container">
         <h3 style="text-align:center; color: var(--secondary);" id="select-city-label">तुमचे शहर निवडा:</h3>
         <div class="city-selector">
-            <button class="select-btn active" id="btn-pune" onclick="showCity('pune')">
-                <i class="fas fa-bus"></i> Pune (पुणे)
-            </button>
-            <button class="select-btn" id="btn-mumbai" onclick="showCity('mumbai')">
-                <i class="fas fa-bus"></i> Mumbai (मुंबई)
-            </button>
+            <button class="select-btn active" id="btn-pune" onclick="showCity('pune')"><i class="fas fa-bus"></i> Pune (पुणे)</button>
+            <button class="select-btn" id="btn-mumbai" onclick="showCity('mumbai')"><i class="fas fa-bus"></i> Mumbai (मुंबई)</button>
         </div>
 
         <div id="pune-content" class="itinerary-box active">
-            <h2 id="pune-title" style="color: var(--primary);">पुणे प्रवासाचा आराखडा</h2>
+            <h2 id="pune-title" style="color:var(--primary)">पुणे प्रवासाचा आराखडा</h2>
             <ul class="timeline">
                 <li><b>11:00 PM (22 Aug):</b> Karve Nagar Pickup</li>
                 <li><b>11:30 PM:</b> Pickup at Warje, Chandni Chowk, Wakad</li>
                 <li><b>04:30 AM:</b> Reach Raigad Base (Pachad)</li>
-                <li><b>06:30 AM:</b> Breakfast & Start Trek</li>
-                <li><b>08:30 AM - 01:00 PM:</b> Detailed Fort Tour with History Guide</li>
+                <li><b>08:30 AM:</b> Detailed Fort History Tour with Guide</li>
                 <li><b>01:30 PM:</b> Authentic Local Lunch</li>
                 <li><b>10:00 PM:</b> Safe Arrival in Pune</li>
             </ul>
         </div>
 
         <div id="mumbai-content" class="itinerary-box">
-            <h2 id="mumbai-title" style="color: var(--primary);">मुंबई प्रवासाचा आराखडा</h2>
+            <h2 id="mumbai-title" style="color:var(--primary)">मुंबई प्रवासाचा आराखडा</h2>
             <ul class="timeline">
                 <li><b>11:00 PM (22 Aug):</b> Mankhurd Station Pickup</li>
                 <li><b>11:30 PM:</b> Vashi, Nerul, Panvel Pickup</li>
                 <li><b>04:30 AM:</b> Arrival at Raigad Base</li>
-                <li><b>06:30 AM:</b> Breakfast & Briefing</li>
                 <li><b>08:30 AM:</b> Entry to Fort via Maha Darwaja</li>
                 <li><b>01:30 PM:</b> Village Style Lunch</li>
                 <li><b>09:30 PM:</b> Safe Arrival in Mumbai</li>
@@ -160,17 +165,17 @@
 
         <div class="grid">
             <div class="card">
-                <h3 id="inc-title" style="color: var(--primary);"><i class="fas fa-check-circle"></i> सहभागी बाबी</h3>
-                <ul id="inc-list" style="line-height: 2;">
-                    <li>खाजगी बस प्रवास (Private Bus)</li>
+                <h3 id="inc-title"><i class="fas fa-check-circle"></i> सहभागी बाबी</h3>
+                <ul id="inc-list" style="line-height: 1.8;">
+                    <li>खाजगी बस प्रवास</li>
                     <li>गावरान नाश्ता आणि जेवण</li>
                     <li>प्रमाणित इतिहास गाईड</li>
                     <li>प्रवेश शुल्क आणि प्रथमोपचार</li>
                 </ul>
             </div>
             <div class="card">
-                <h3 id="carry-title" style="color: var(--primary);"><i class="fas fa-backpack"></i> काय सोबत आणावे?</h3>
-                <ul id="carry-list" style="line-height: 2;">
+                <h3 id="carry-title"><i class="fas fa-backpack"></i> काय सोबत आणावे?</h3>
+                <ul id="carry-list" style="line-height: 1.8;">
                     <li>२-३ लिटर पाणी (Must)</li>
                     <li>चांगल्या ग्रीपचे ट्रेकिंग शूज</li>
                     <li>रेनकोट / पाँजो</li>
@@ -182,7 +187,7 @@
         <div class="cta">
             <h3 id="book-now" style="font-size: 1.8rem;">आताच नोंदणी करा!</h3>
             <p style="font-size: 1.1rem;">संपर्क: +91-8104276237 (Sakhi)</p>
-            <a href="https://wa.me/918104276237?text=Hi, I want to book Raigad Trek" class="btn-wa">
+            <a href="https://wa.me/918104276237" class="btn-wa">
                 <i class="fab fa-whatsapp"></i> WhatsApp द्वारे बुक करा
             </a>
         </div>
@@ -198,8 +203,8 @@
                 incTitle: "Inclusions",
                 carryTitle: "Things to Carry",
                 bookTitle: "Book Your Seat Now!",
-                incList: "<li>Private AC/Non-AC Bus</li><li>Authentic Breakfast & Lunch</li><li>Certified History Guide</li><li>First Aid & Entry Fees</li>",
-                carryList: "<li>2-3 Liters Water (Must)</li><li>Good Grip Trekking Shoes</li><li>Raincoat / Poncho</li><li>Extra Pair of Clothes</li>",
+                incList: "<li>Private AC/Non-AC Bus</li><li>Authentic Breakfast & Lunch</li><li>Certified History Guide</li><li>Entry Fees</li>",
+                carryList: "<li>2-3 Liters Water (Must)</li><li>Good Grip Trekking Shoes</li><li>Raincoat / Poncho</li><li>ID Proof</li>",
                 puneTitle: "Pune Departure Schedule",
                 mumbaiTitle: "Mumbai Departure Schedule"
             },
@@ -211,8 +216,8 @@
                 incTitle: "सहभागी बाबी",
                 carryTitle: "काय सोबत आणावे?",
                 bookTitle: "आताच नोंदणी करा!",
-                incList: "<li>खाजगी बस प्रवास</li><li>गावरान नाश्ता आणि जेवण</li><li>प्रमाणित इतिहास गाईड</li><li>प्रवेश शुल्क आणि प्रथमोपचार</li>",
-                carryList: "<li>२-३ लिटर पाणी (Must)</li><li>चांगल्या ग्रीपचे ट्रेकिंग शूज</li><li>रेनकोट / पाँजो</li><li>ओळखपत्र (ID Proof)</li>",
+                incList: "<li>खाजगी बस प्रवास</li><li>गावरान नाश्ता आणि जेवण</li><li>प्रमाणित इतिहास गाईड</li><li>प्रवेश शुल्क</li>",
+                carryList: "<li>२-३ लिटर पाणी (Must)</li><li>चांगल्या ग्रीपचे ट्रेकिंग शूज</li><li>रेनकोट / पाँजो</li><li>ओळखपत्र</li>",
                 puneTitle: "पुणे प्रवासाचा आराखडा",
                 mumbaiTitle: "मुंबई प्रवासाचा आराखडा"
             }
@@ -220,7 +225,8 @@
 
         function setLanguage(lang) {
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if(lang === 'en') event.target.classList.add('active');
+            else document.getElementById('mr-btn').classList.add('active');
 
             document.getElementById('main-title').innerText = content[lang].title;
             document.getElementById('sub-title').innerText = content[lang].subTitle;
