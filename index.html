@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;800&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- Swiper CSS for Testimonials Slider -->
+    <!-- Swiper CSS for Testimonials -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
@@ -35,25 +35,15 @@
             z-index: 1001;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-
         .logo-container { display: flex; align-items: center; gap: 12px; }
         .logo-img { height: 75px; width: auto; object-fit: contain; }
-        
-        /* Logo Title in Open Sans */
-        .brand-name { 
-            font-family: 'Open Sans', sans-serif; 
-            font-size: 1.1rem; 
-            font-weight: 800; 
-            color: #2c3e50; 
-            text-transform: uppercase; 
-            letter-spacing: 0.5px; 
-        }
+        .brand-name { font-family: 'Open Sans', sans-serif; font-size: 1.1rem; font-weight: 800; color: #2c3e50; text-transform: uppercase; letter-spacing: 0.5px; }
 
         .lang-bar { display: flex; gap: 8px; }
         .lang-btn { border: 1px solid #2c3e50; background: rgba(255,255,255,0.6); padding: 5px 12px; cursor: pointer; border-radius: 15px; font-weight: bold; font-size: 0.8rem; }
         .lang-btn.active { background: #2c3e50; color: white; }
 
-        /* Banner Section - Price at Bottom */
+        /* Banner Section */
         header { 
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
                         url('https://lh3.googleusercontent.com/d/1VI3EcoO-VUXnt18q4o5_nqWTbqrOkELk');
@@ -66,27 +56,15 @@
             align-items: center; 
         }
 
-        /* Reduced Price Button */
         .price-tag { 
-            background: #c0392b; 
-            color: white; 
-            padding: 10px 30px; 
-            border-radius: 50px; 
-            font-size: 1.3rem; 
-            font-weight: bold; 
-            margin-top: auto; 
-            margin-bottom: 25px; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.4); 
-            display: inline-block;
+            background: #c0392b; color: white; padding: 10px 30px; border-radius: 50px; 
+            font-size: 1.3rem; font-weight: bold; margin-top: auto; margin-bottom: 25px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4); display: inline-block;
         }
 
         .container { 
-            max-width: 1000px; 
-            margin: -20px auto 50px; 
-            background: white; 
-            border-radius: 20px; 
-            padding: 40px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            max-width: 1000px; margin: -20px auto 50px; background: white; 
+            border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
             position: relative; 
         }
         
@@ -104,17 +82,23 @@
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
         .card { padding: 20px; border-radius: 12px; background: #fdfdfd; border: 1px solid #eee; }
 
-        /* Testimonials Section - Square Slider */
+        /* Testimonials Square Slider */
         .testimonials-section { margin-top: 40px; text-align: center; }
         .swiper { width: 100%; padding-top: 20px; padding-bottom: 50px; }
         .swiper-slide { width: 250px; height: 250px; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Instagram Section with Live LightWidget */
+        /* Instagram Button Section Only */
         .insta-section { margin-top: 50px; text-align: center; border-top: 1px solid #eee; padding-top: 40px; }
-        .insta-feed-container { margin-top: 25px; border-radius: 12px; overflow: hidden; min-height: 300px; }
-        .btn-insta { display: inline-block; margin-top: 30px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; padding: 12px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; }
+        .btn-insta { 
+            display: inline-block; margin-top: 15px; 
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
+            color: white; padding: 12px 35px; text-decoration: none; 
+            border-radius: 50px; font-weight: bold; font-size: 1.1rem; transition: 0.3s;
+        }
+        .btn-insta:hover { transform: scale(1.05); }
 
+        /* CTA & Footer */
         .cta { text-align: center; margin-top: 40px; padding: 40px; background: var(--secondary); color: white; border-radius: 15px; }
         .cta p { color: white !important; font-size: 1.1rem; margin-bottom: 10px; text-decoration: none !important; }
         .btn-wa { background: #25d366; color: white; padding: 15px 35px; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: bold; font-size: 1.2rem; margin-top: 20px; }
@@ -133,7 +117,6 @@
 </head>
 <body>
 
-    <!-- Header Section -->
     <div class="top-header">
         <div class="logo-container">
             <img src="https://lh3.googleusercontent.com/d/1GQsrtJzOnmEw8ZfofivAcatdMKWcMFTO" alt="Logo" class="logo-img">
@@ -152,14 +135,12 @@
     </header>
 
     <div class="container">
-        <!-- City Selection -->
         <h3 style="text-align:center; color: var(--secondary);" id="select-city-label">तुमचे शहर निवडा:</h3>
         <div class="city-selector">
             <button class="select-btn active" id="btn-pune" onclick="showCity('pune')"><i class="fas fa-bus"></i> Pune (पुणे)</button>
             <button class="select-btn" id="btn-mumbai" onclick="showCity('mumbai')"><i class="fas fa-bus"></i> Mumbai (मुंबई)</button>
         </div>
 
-        <!-- Itinerary Sections -->
         <div id="pune-content" class="itinerary-box active">
             <h2 id="pune-title" style="color:var(--primary)">पुणे प्रवासाचा आराखडा</h2>
             <ul class="timeline" id="pune-timeline-list"></ul>
@@ -170,13 +151,12 @@
             <ul class="timeline" id="mumbai-timeline-list"></ul>
         </div>
 
-        <!-- Inclusions & Carry Items -->
         <div class="grid">
             <div class="card"><h3 id="inc-title"><i class="fas fa-check-circle"></i> सहभागी बाबी</h3><ul id="inc-list" style="line-height: 1.8;"></ul></div>
             <div class="card"><h3 id="carry-title"><i class="fas fa-backpack"></i> काय सोबत आणावे?</h3><ul id="carry-list" style="line-height: 1.8;"></ul></div>
         </div>
 
-        <!-- Testimonials Slider -->
+        <!-- Testimonials -->
         <div class="testimonials-section">
             <h2 id="test-title" style="color: var(--primary);">आमचे ट्रेकर्स काय म्हणतात</h2>
             <div class="swiper mySwiper">
@@ -194,20 +174,14 @@
             </div>
         </div>
 
-        <!-- Instagram Live Feed Section -->
+        <!-- Instagram Section (Grid Removed, Button Kept) -->
         <div class="insta-section">
-            <h2 id="insta-title" style="color: var(--primary);">आमचे इंस्टाग्राम अपडेट्स</h2>
-            <div class="insta-feed-container">
-                <!-- LightWidget WIDGET -->
-                <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-                <iframe src="//lightwidget.com/widgets/a7f47fb4eebf51bc8cfb52cfba58b341.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
-            </div>
+            <h2 id="insta-title" style="color: var(--primary);">आम्हाला इंस्टाग्रामवर फॉलो करा</h2>
             <a href="https://www.instagram.com/_with_sakhi" target="_blank" class="btn-insta">
-                <i class="fab fa-instagram"></i> आम्हाला इंस्टाग्रामवर फॉलो करा
+                <i class="fab fa-instagram"></i> Follow @_with_sakhi
             </a>
         </div>
 
-        <!-- Contact CTA -->
         <div class="cta">
             <h3 id="book-now" style="font-size: 1.8rem;">आताच नोंदणी करा!</h3>
             <p>संपर्क: +91-8104276237 (Sakhi)</p>
@@ -222,22 +196,22 @@
             en: {
                 title: "Raigad Fort Trek", subTitle: "Historical Educational Tour - 23rd Aug 2026", price: "₹1499/- Per Person",
                 cityLabel: "Select Your Departure City:", incTitle: "Inclusions", carryTitle: "Things to Carry",
-                testTitle: "What Our Trekkers Say", instaTitle: "Our Instagram Updates", bookTitle: "Book Your Seat Now!",
+                testTitle: "What Our Trekkers Say", instaTitle: "Follow Us on Instagram", bookTitle: "Book Now!",
                 incList: "<li>Private AC/Non-AC Bus</li><li>Authentic Breakfast & Lunch</li><li>Professional History Guide</li><li>Advance Payment Compulsory</li>",
                 carryList: "<li>2-3 Liters Water (Must)</li><li>Good Grip Trekking Shoes</li><li>Raincoat / Poncho</li><li>ID Proof</li>",
                 puneTitle: "Pune Departure Schedule", mumbaiTitle: "Mumbai Departure Schedule",
-                puneTimeline: `<li><b>11:00 PM (22 Aug):</b> Karve Nagar Departure</li><li><b>11:30 PM:</b> Pickup at Warje, Chandni Chowk, Wakad</li><li><b>04:30 AM:</b> Reach Raigad Base</li><li><b>08:30 AM:</b> History Guide Tour</li><li><b>01:30 PM:</b> Village Style Lunch</li><li><b>10:00 PM:</b> Safe Arrival in Pune</li>`,
-                mumbaiTimeline: `<li><b>11:00 PM (22 Aug):</b> Mankhurd Station Departure</li><li><b>11:30 PM:</b> Pickup at Vashi, Panvel</li><li><b>04:30 AM:</b> Arrival at Base</li><li><b>08:30 AM:</b> Enter Fort via Maha Darwaja</li><li><b>01:30 PM:</b> Authentic Lunch</li><li><b>09:30 PM:</b> Safe Arrival in Mumbai</li>`
+                puneTimeline: `<li><b>11:00 PM (22 Aug):</b> Departure</li><li><b>11:30 PM:</b> Pickups</li><li><b>04:30 AM:</b> Reach Base</li><li><b>08:30 AM:</b> Guided Tour</li><li><b>01:30 PM:</b> Lunch</li><li><b>10:00 PM:</b> Return</li>`,
+                mumbaiTimeline: `<li><b>11:00 PM (22 Aug):</b> Departure</li><li><b>11:30 PM:</b> Pickups</li><li><b>04:30 AM:</b> Arrival</li><li><b>08:30 AM:</b> Entry</li><li><b>01:30 PM:</b> Lunch</li><li><b>09:30 PM:</b> Return</li>`
             },
             mr: {
                 title: "दुर्गराज किल्ले रायगड", subTitle: "अभ्यासपूर्ण भटकंती - २३ ऑगस्ट २०२६", price: "₹१४९९/- प्रति व्यक्ती",
                 cityLabel: "तुमचे शहर निवडा:", incTitle: "सहभागी बाबी", carryTitle: "काय सोबत आणावे?",
-                testTitle: "आमचे ट्रेकर्स काय म्हणतात", instaTitle: "आमचे इंस्टाग्राम अपडेट्स", bookTitle: "आताच नोंदणी करा!",
+                testTitle: "आमचे ट्रेकर्स काय म्हणतात", instaTitle: "आम्हाला इंस्टाग्रामवर फॉलो करा", bookTitle: "आताच नोंदणी करा!",
                 incList: "<li>खाजगी बस प्रवास</li><li>गावरान नाश्ता आणि जेवण</li><li>व्यावसायिक इतिहास गाईड</li><li>अॅडव्हान्स पेमेंट अनिवार्य</li>",
                 carryList: "<li>२-३ लिटर पाणी (Must)</li><li>चांगल्या ग्रीपचे ट्रेकिंग शूज</li><li>रेनकोट / पाँजो</li><li>ओळखपत्र</li>",
                 puneTitle: "पुणे प्रवासाचा आराखडा", mumbaiTitle: "मुंबई प्रवासाचा आराखडा",
-                puneTimeline: `<li><b>११:०० PM (२२ ऑगस्ट):</b> कर्वे नगर प्रवासाला सुरुवात</li><li><b>११:३० PM:</b> वारजे, चांदणी चौक, वाकड पिकअप</li><li><b>०४:३० AM:</b> रायगड पायथा आगमन</li><li><b>०८:३० AM:</b> अभ्यासपूर्ण गडदर्शन</li><li><b>०१:३० PM:</b> गावरान दुपारचे जेवण</li><li><b>१०:०० PM:</b> पुणे सुखरूप आगमन</li>`,
-                mumbaiTimeline: `<li><b>११:०० PM (२२ ऑगस्ट):</b> मानखुर्द स्टेशन प्रवासाला सुरुवात</li><li><b>११:३० PM:</b> वाशी, नेरूळ, पनवेल पिकअप</li><li><b>०४:३० AM:</b> पायथा आगमन</li><li><b>०८:३० AM:</b> गडावर प्रवेश</li><li><b>०१:३० PM:</b> चविष्ट जेवण</li><li><b>०९:३० PM:</b> मुंबई सुखरूप आगमन</li>`
+                puneTimeline: `<li><b>११:०० PM (२२ ऑगस्ट):</b> प्रवासाला सुरुवात</li><li><b>११:३० PM:</b> पिकअप पॉईंट्स</li><li><b>०४:३० AM:</b> पायथा आगमन</li><li><b>०८:३० AM:</b> गडदर्शन</li><li><b>०१:३० PM:</b> गावरान जेवण</li><li><b>१०:०० PM:</b> पुणे आगमन</li>`,
+                mumbaiTimeline: `<li><b>११:०० PM (२२ ऑगस्ट):</b> प्रवासाला सुरुवात</li><li><b>११:३० PM:</b> पिकअप पॉईंट्स</li><li><b>०४:३० AM:</b> पायथा आगमन</li><li><b>०८:३० AM:</b> गडावर प्रवेश</li><li><b>०१:३० PM:</b> चविष्ट जेवण</li><li><b>०९:३० PM:</b> मुंबई आगमन</li>`
             }
         };
 
@@ -263,7 +237,7 @@
             document.getElementById('mumbai-timeline-list').innerHTML = content[lang].mumbaiTimeline;
         }
 
-        setLanguage('mr'); // Default Load
+        setLanguage('mr');
 
         function showCity(city) {
             document.querySelectorAll('.select-btn').forEach(b => b.classList.remove('active'));
@@ -273,7 +247,6 @@
             document.getElementById(city + '-content').classList.add('active');
         }
 
-        // Testimonials Swiper
         var swiper = new Swiper(".mySwiper", {
             effect: "coverflow", grabCursor: true, centeredSlides: true, slidesPerView: "auto",
             coverflowEffect: { rotate: 20, stretch: 0, depth: 100, modifier: 1, slideShadows: false, },
