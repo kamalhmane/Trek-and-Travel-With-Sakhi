@@ -18,7 +18,7 @@
         /* Yellow Header Patch */
         .top-header {
             background-color: var(--yellow);
-            padding: 10px 5%; /* वर-खाली थोडी जागा वाढवली आहे */
+            padding: 10px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -28,57 +28,49 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        /* लोगोची साईज वाढवली आहे */
-        .logo-img {
-            height: 85px; /* ५५ वरून ८५ केली आहे */
-            width: auto;
-            border: none; 
-            background: transparent;
-            object-fit: contain;
-            transition: transform 0.3s;
-        }
-        
-        .logo-img:hover { transform: scale(1.05); }
-
-        .brand-name {
-            font-size: 1.3rem; /* फॉन्ट थोडा मोठा केला आहे */
-            font-weight: 800;
-            color: #2c3e50;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .logo-container { display: flex; align-items: center; gap: 15px; }
+        .logo-img { height: 80px; width: auto; object-fit: contain; }
+        .brand-name { font-size: 1.2rem; font-weight: 800; color: #2c3e50; text-transform: uppercase; letter-spacing: 1px; }
 
         .lang-bar { display: flex; gap: 8px; }
-        .lang-btn {
-            border: 1px solid #2c3e50;
-            background: rgba(255,255,255,0.6);
-            padding: 5px 12px;
-            cursor: pointer;
-            border-radius: 15px;
-            font-weight: bold;
-            font-size: 0.85rem;
-        }
+        .lang-btn { border: 1px solid #2c3e50; background: rgba(255,255,255,0.6); padding: 5px 12px; cursor: pointer; border-radius: 15px; font-weight: bold; font-size: 0.85rem; }
         .lang-btn.active { background: #2c3e50; color: white; }
 
         /* Banner Section */
         header { 
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                         url('https://lh3.googleusercontent.com/d/1VI3EcoO-VUXnt18q4o5_nqWTbqrOkELk');
             background-size: cover; background-position: center; color: white; text-align: center; 
-            padding: 110px 20px; min-height: 400px; display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            padding: 120px 20px 100px 20px; 
+            min-height: 450px; display: flex; flex-direction: column; justify-content: center; align-items: center; 
         }
 
-        .price-tag { background: #c0392b; color: white; padding: 12px 30px; border-radius: 50px; font-size: 1.6rem; font-weight: bold; margin-top: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        .container { max-width: 1000px; margin: -50px auto 50px; background: white; border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; }
+        /* Price Button */
+        .price-tag { 
+            background: #c0392b; 
+            color: white; 
+            padding: 15px 40px; 
+            border-radius: 50px; 
+            font-size: 1.8rem; 
+            font-weight: bold; 
+            margin-top: 40px; 
+            margin-bottom: 20px; 
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4); 
+            display: inline-block;
+        }
+
+        .container { 
+            max-width: 1000px; 
+            margin: -30px auto 50px; 
+            background: white; 
+            border-radius: 15px; 
+            padding: 40px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            position: relative; 
+        }
         
         .city-selector { display: flex; gap: 15px; margin: 30px 0; justify-content: center; }
-        .select-btn { flex: 1; padding: 15px; border: 2px solid #ddd; background: white; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; }
+        .select-btn { flex: 1; padding: 15px; border: 2px solid #ddd; background: white; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; text-align: center; }
         .select-btn.active { border-color: var(--primary); background: #fff9f4; color: var(--primary); }
 
         .itinerary-box { display: none; }
@@ -87,10 +79,10 @@
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 30px; }
         @media (max-width: 768px) { 
             .grid { grid-template-columns: 1fr; } 
-            header { min-height: 250px; padding: 50px 20px; }
+            header { min-height: 350px; padding: 80px 20px 80px 20px; }
             .brand-name { font-size: 0.9rem; }
-            .logo-img { height: 60px; } /* मोबाईलवर ६० साईज राहील */
-            .top-header { padding: 8px 3%; }
+            .price-tag { font-size: 1.4rem; padding: 12px 30px; }
+            .container { padding: 25px; margin-top: -20px; }
         }
         
         .card { padding: 25px; border-radius: 12px; background: #fdfdfd; border: 1px solid #eee; }
@@ -158,19 +150,13 @@
             <div class="card">
                 <h3 id="inc-title"><i class="fas fa-check-circle"></i> सहभागी बाबी</h3>
                 <ul id="inc-list" style="line-height: 1.8;">
-                    <li>खाजगी बस प्रवास</li>
-                    <li>गावरान नाश्ता आणि जेवण</li>
-                    <li>प्रमाणित इतिहास गाईड</li>
-                    <li>प्रवेश शुल्क आणि प्रथमोपचार</li>
+                    <!-- Update will happen via Script -->
                 </ul>
             </div>
             <div class="card">
                 <h3 id="carry-title"><i class="fas fa-backpack"></i> काय सोबत आणावे?</h3>
                 <ul id="carry-list" style="line-height: 1.8;">
-                    <li>२-३ लिटर पाणी (Must)</li>
-                    <li>चांगल्या ग्रीपचे ट्रेकिंग शूज</li>
-                    <li>रेनकोट / पाँजो</li>
-                    <li>ओळखपत्र (ID Proof)</li>
+                    <!-- Update will happen via Script -->
                 </ul>
             </div>
         </div>
@@ -194,7 +180,7 @@
                 incTitle: "Inclusions",
                 carryTitle: "Things to Carry",
                 bookTitle: "Book Your Seat Now!",
-                incList: "<li>Private AC/Non-AC Bus</li><li>Authentic Breakfast & Lunch</li><li>Certified History Guide</li><li>Entry Fees</li>",
+                incList: "<li>Private AC/Non-AC Bus</li><li>Authentic Breakfast & Lunch</li><li>Professional History Guide</li><li>Advance Payment Compulsory</li>",
                 carryList: "<li>2-3 Liters Water (Must)</li><li>Good Grip Trekking Shoes</li><li>Raincoat / Poncho</li><li>ID Proof</li>",
                 puneTitle: "Pune Departure Schedule",
                 mumbaiTitle: "Mumbai Departure Schedule"
@@ -207,7 +193,7 @@
                 incTitle: "सहभागी बाबी",
                 carryTitle: "काय सोबत आणावे?",
                 bookTitle: "आताच नोंदणी करा!",
-                incList: "<li>खाजगी बस प्रवास</li><li>गावरान नाश्ता आणि जेवण</li><li>प्रमाणित इतिहास गाईड</li><li>प्रवेश शुल्क</li>",
+                incList: "<li>खाजगी बस प्रवास</li><li>गावरान नाश्ता आणि जेवण</li><li>व्यावसायिक इतिहास गाईड</li><li>अॅडव्हान्स पेमेंट अनिवार्य</li>",
                 carryList: "<li>२-३ लिटर पाणी (Must)</li><li>चांगल्या ग्रीपचे ट्रेकिंग शूज</li><li>रेनकोट / पाँजो</li><li>ओळखपत्र</li>",
                 puneTitle: "पुणे प्रवासाचा आराखडा",
                 mumbaiTitle: "मुंबई प्रवासाचा आराखडा"
@@ -216,8 +202,11 @@
 
         function setLanguage(lang) {
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            if(lang === 'en') event.target.classList.add('active');
-            else document.getElementById('mr-btn').classList.add('active');
+            if(lang === 'en') {
+                event.target.classList.add('active');
+            } else {
+                document.getElementById('mr-btn').classList.add('active');
+            }
 
             document.getElementById('main-title').innerText = content[lang].title;
             document.getElementById('sub-title').innerText = content[lang].subTitle;
@@ -231,6 +220,10 @@
             document.getElementById('pune-title').innerText = content[lang].puneTitle;
             document.getElementById('mumbai-title').innerText = content[lang].mumbaiTitle;
         }
+
+        // Initial Load Inclusions in Marathi
+        document.getElementById('inc-list').innerHTML = content.mr.incList;
+        document.getElementById('carry-list').innerHTML = content.mr.carryList;
 
         function showCity(city) {
             document.querySelectorAll('.select-btn').forEach(b => b.classList.remove('active'));
