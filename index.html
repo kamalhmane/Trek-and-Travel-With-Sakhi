@@ -23,6 +23,7 @@
         
         body { font-family: 'Poppins', sans-serif; margin: 0; background-color: var(--light); color: #333; overflow-x: hidden; }
         
+        /* Yellow Header Patch */
         .top-header {
             background-color: var(--yellow);
             padding: 10px 5%;
@@ -34,7 +35,6 @@
             z-index: 1001;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
-
         .logo-container { display: flex; align-items: center; gap: 12px; }
         .logo-img { height: 70px; width: auto; object-fit: contain; }
         .brand-name { font-family: 'Open Sans', sans-serif; font-size: 1.1rem; font-weight: 800; color: #2c3e50; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -43,50 +43,60 @@
         .lang-btn { border: 1px solid #2c3e50; background: rgba(255,255,255,0.6); padding: 4px 10px; cursor: pointer; border-radius: 15px; font-weight: bold; font-size: 0.8rem; }
         .lang-btn.active { background: #2c3e50; color: white; }
 
+        /* Banner Section - Shade reduced to 0.3 */
         header { 
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
                         url('https://lh3.googleusercontent.com/d/1VI3EcoO-VUXnt18q4o5_nqWTbqrOkELk');
             background-size: cover; background-position: center; color: white; text-align: center; 
             padding: 100px 20px 40px 20px;
-            min-height: 480px; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; 
+            min-height: 500px; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; 
         }
+        .price-tag { background: #c0392b; color: white; padding: 10px 30px; border-radius: 50px; font-size: 1.3rem; font-weight: bold; margin-top: auto; margin-bottom: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.4); display: inline-block; }
 
-        .price-tag { background: #c0392b; color: white; padding: 10px 30px; border-radius: 50px; font-size: 1.4rem; font-weight: bold; margin-top: auto; margin-bottom: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.4); }
-
+        /* Container & Cards */
         .container { max-width: 1000px; margin: -20px auto 50px; background: white; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; }
-        
         .city-selector { display: flex; gap: 12px; margin: 25px 0; justify-content: center; }
         .select-btn { flex: 1; padding: 12px; border: 2px solid #ddd; background: white; border-radius: 10px; font-size: 1rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; }
         .select-btn.active { border-color: var(--primary); background: #fff9f4; color: var(--primary); }
-
         .itinerary-box { display: none; }
         .itinerary-box.active { display: block; animation: fadeIn 0.5s; }
         
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
-        .card { padding: 20px; border-radius: 12px; background: #fdfdfd; border: 1px solid #eee; }
-        
-        /* Timeline Styling */
         .timeline { list-style: none; padding: 0; }
         .timeline li { padding-left: 30px; border-left: 2px solid #eee; position: relative; padding-bottom: 20px; font-size: 0.9rem; }
         .timeline li::before { content: "\f111"; font-family: "Font Awesome 5 Free"; font-weight: 900; position: absolute; left: -9px; top: 0; background: white; color: var(--primary); font-size: 12px; }
 
-        /* Testimonials Section */
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+        .card { padding: 20px; border-radius: 12px; background: #fdfdfd; border: 1px solid #eee; }
+
+        /* Testimonials Section - Fixed Square Slider */
         .testimonials-section { margin-top: 40px; text-align: center; }
         .swiper { width: 100%; padding-top: 20px; padding-bottom: 50px; }
         .swiper-slide { width: 250px; height: 250px; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
 
-        .cta { text-align: center; margin-top: 40px; padding: 30px; background: var(--secondary); color: white; border-radius: 15px; }
-        .cta p { color: white !important; font-size: 1.1rem; margin-bottom: 10px; }
-        .btn-wa { background: #25d366; color: white; padding: 12px 30px; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: bold; font-size: 1.1rem; margin-top: 15px; }
+        /* Instagram Section Styles - Professional Grid */
+        .insta-section { margin-top: 50px; text-align: center; border-top: 1px solid #eee; padding-top: 40px; }
+        .insta-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 25px; }
+        .insta-item { position: relative; display: block; aspect-ratio: 1/1; border-radius: 8px; overflow: hidden; }
+        .insta-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
+        .insta-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3); color: white; display: flex; align-items: center; justify-content: center; opacity: 0; transition: 0.3s; font-size: 1.5rem; }
+        .insta-item:hover img { transform: scale(1.1); }
+        .insta-item:hover .insta-overlay { opacity: 1; }
+        .btn-insta { display: inline-block; margin-top: 30px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; padding: 12px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; }
+
+        /* Footer & CTA */
+        .cta { text-align: center; margin-top: 40px; padding: 40px; background: var(--secondary); color: white; border-radius: 15px; }
+        .cta p { color: white !important; font-size: 1.1rem; margin-bottom: 10px; text-decoration: none !important; }
+        .btn-wa { background: #25d366; color: white; padding: 15px 35px; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: bold; font-size: 1.2rem; margin-top: 20px; }
 
         @media (max-width: 768px) { 
-            header { min-height: 420px; padding: 60px 20px 20px 20px; }
+            header { min-height: 450px; padding: 60px 20px 20px 20px; }
             .brand-name { font-size: 0.85rem; }
             .logo-img { height: 55px; }
             .container { padding: 20px; margin-top: -15px; }
             .grid { grid-template-columns: 1fr; }
-            .swiper-slide { width: 200px; height: 200px; }
+            .insta-grid { grid-template-columns: repeat(3, 1fr); }
+            .insta-item:nth-child(n+10) { display: none; } /* Show 9 on mobile */
         }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -120,16 +130,12 @@
 
         <div id="pune-content" class="itinerary-box active">
             <h2 id="pune-title" style="color:var(--primary)">पुणे प्रवासाचा आराखडा</h2>
-            <ul class="timeline" id="pune-timeline-list">
-                <!-- Data will be injected here via script -->
-            </ul>
+            <ul class="timeline" id="pune-timeline-list"></ul>
         </div>
 
         <div id="mumbai-content" class="itinerary-box">
             <h2 id="mumbai-title" style="color:var(--primary)">मुंबई प्रवासाचा आराखडा</h2>
-            <ul class="timeline" id="mumbai-timeline-list">
-                <!-- Data will be injected here via script -->
-            </ul>
+            <ul class="timeline" id="mumbai-timeline-list"></ul>
         </div>
 
         <div class="grid">
@@ -137,21 +143,70 @@
             <div class="card"><h3 id="carry-title"><i class="fas fa-backpack"></i> काय सोबत आणावे?</h3><ul id="carry-list" style="line-height: 1.8;"></ul></div>
         </div>
 
+        <!-- Testimonials -->
         <div class="testimonials-section">
             <h2 id="test-title" style="color: var(--primary);">आमचे ट्रेकर्स काय म्हणतात</h2>
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1Bj7hBIT_Td1NoLwKfoUhq-C9c3fg9dW0" alt="Review"></div>
-                    <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1d5EKORsPBAARGbGFCVZ6hE8squ71B-S0" alt="Review"></div>
-                    <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1mQ0dEoYn3rsTB36hgLZs9gz1r5DLp9my" alt="Review"></div>
-                    <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1qsgngVhjKGtUlKmC90rIfDViEw2sGN2h" alt="Review"></div>
-                    <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1KgGjTBjiUuz8j3IBncGh5OL3i1TG3h2E" alt="Review"></div>
-                    <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1Qnqe9Li4cqfa_xWKXwocrqJ4Z_7gi7fo" alt="Review"></div>
-                    <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1bNNIvM_sk0huy_BqgKGh1mVxHVrr3LeK" alt="Review"></div>
-                    <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1jSjK1qY7No5diaalEFnRpDjc3MqbhTMg" alt="Review"></div>
+                    <!-- Images remain consistent with Drive links -->
+                    <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1Bj7hBIT_Td1NoLwKfoUhq-C9c3fg9dW0"></div>
+                    <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1d5EKORsPBAARGbGFCVZ6hE8squ71B-S0"></div>
+                    <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1mQ0dEoYn3rsTB36hgLZs9gz1r5DLp9my"></div>
+                    <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1qsgngVhjKGtUlKmC90rIfDViEw2sGN2h"></div>
+                    <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1KgGjTBjiUuz8j3IBncGh5OL3i1TG3h2E"></div>
+                    <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1Qnqe9Li4cqfa_xWKXwocrqJ4Z_7gi7fo"></div>
+                    <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1bNNIvM_sk0huy_BqgKGh1mVxHVrr3LeK"></div>
+                    <div class="swiper-slide"><img src="https://lh3.googleusercontent.com/d/1jSjK1qY7No5diaalEFnRpDjc3MqbhTMg"></div>
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
+        </div>
+
+        <!-- Instagram Gallery Grid (Updated with 12 Links) -->
+        <div class="insta-section">
+            <h2 id="insta-title" style="color: var(--primary);">आमचे इंस्टाग्राम अपडेट्स</h2>
+            <div class="insta-grid">
+                <!-- 7 New Links Added Below -->
+                <a href="https://www.instagram.com/p/DQljo7iiEsq/" target="_blank" class="insta-item">
+                    <img src="https://lh3.googleusercontent.com/d/1Bj7hBIT_Td1NoLwKfoUhq-C9c3fg9dW0">
+                    <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+                <a href="https://www.instagram.com/p/DS6rpipCKTQ/" target="_blank" class="insta-item">
+                    <img src="https://lh3.googleusercontent.com/d/1d5EKORsPBAARGbGFCVZ6hE8squ71B-S0">
+                    <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+                <a href="https://www.instagram.com/p/DaGj3PrCCfk/" target="_blank" class="insta-item">
+                    <img src="https://lh3.googleusercontent.com/d/1mQ0dEoYn3rsTB36hgLZs9gz1r5DLp9my">
+                    <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+                <a href="https://www.instagram.com/p/DZpO0DdiOEd/" target="_blank" class="insta-item">
+                    <img src="https://lh3.googleusercontent.com/d/1qsgngVhjKGtUlKmC90rIfDViEw2sGN2h">
+                    <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+                <!-- This one is a Reel Link -->
+                <a href="https://www.instagram.com/reel/DQyNstciDdn/" target="_blank" class="insta-item">
+                    <img src="https://lh3.googleusercontent.com/d/1KgGjTBjiUuz8j3IBncGh5OL3i1TG3h2E">
+                    <div class="insta-overlay"><i class="fas fa-play"></i></div>
+                </a>
+                <a href="https://www.instagram.com/p/DQl38p7jJ7J/" target="_blank" class="insta-item">
+                    <img src="https://lh3.googleusercontent.com/d/1Qnqe9Li4cqfa_xWKXwocrqJ4Z_7gi7fo">
+                    <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+                <a href="https://www.instagram.com/p/DXtsxGqDIQt/" target="_blank" class="insta-item">
+                    <img src="https://lh3.googleusercontent.com/d/1bNNIvM_sk0huy_BqgKGh1mVxHVrr3LeK">
+                    <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+                </a>
+
+                <!-- Previous 5 Links Below -->
+                <a href="https://www.instagram.com/p/DMFfPb6y9Vj/" target="_blank" class="insta-item"><img src="https://lh3.googleusercontent.com/d/1Bj7hBIT_Td1NoLwKfoUhq-C9c3fg9dW0"><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+                <a href="https://www.instagram.com/p/DLQHQHaytYb/" target="_blank" class="insta-item"><img src="https://lh3.googleusercontent.com/d/1d5EKORsPBAARGbGFCVZ6hE8squ71B-S0"><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+                <a href="https://www.instagram.com/p/Db45zqdCAhw/" target="_blank" class="insta-item"><img src="https://lh3.googleusercontent.com/d/1mQ0dEoYn3rsTB36hgLZs9gz1r5DLp9my"><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+                <a href="https://www.instagram.com/p/DXbixVJjAGT/" target="_blank" class="insta-item"><img src="https://lh3.googleusercontent.com/d/1qsgngVhjKGtUlKmC90rIfDViEw2sGN2h"><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+                <a href="https://www.instagram.com/p/DMxgDgkIZ--/" target="_blank" class="insta-item"><img src="https://lh3.googleusercontent.com/d/1KgGjTBjiUuz8j3IBncGh5OL3i1TG3h2E"><div class="insta-overlay"><i class="fab fa-instagram"></i></div></a>
+            </div>
+            <a href="https://www.instagram.com/_with_sakhi" target="_blank" class="btn-insta">
+                <i class="fab fa-instagram"></i> आम्हाला इंस्टाग्रामवर फॉलो करा
+            </a>
         </div>
 
         <div class="cta">
@@ -167,46 +222,22 @@
             en: {
                 title: "Raigad Fort Trek", subTitle: "Historical Educational Tour - 23rd Aug 2026", price: "₹1499/- Per Person",
                 cityLabel: "Select Your Departure City:", incTitle: "Inclusions", carryTitle: "Things to Carry",
-                testTitle: "What Our Trekkers Say", bookTitle: "Book Your Seat Now!",
+                testTitle: "What Our Trekkers Say", instaTitle: "Our Instagram Updates", bookTitle: "Book Your Seat Now!",
                 incList: "<li>Private AC/Non-AC Bus</li><li>Authentic Breakfast & Lunch</li><li>Professional History Guide</li><li>Advance Payment Compulsory</li>",
                 carryList: "<li>2-3 Liters Water (Must)</li><li>Good Grip Trekking Shoes</li><li>Raincoat / Poncho</li><li>ID Proof</li>",
                 puneTitle: "Pune Departure Schedule", mumbaiTitle: "Mumbai Departure Schedule",
-                puneTimeline: `
-                    <li><b>11:00 PM (22 Aug):</b> Karve Nagar Pickup</li>
-                    <li><b>11:30 PM:</b> Pickup at Warje, Chandni Chowk, Wakad</li>
-                    <li><b>04:30 AM:</b> Reach Raigad Base (Pachad)</li>
-                    <li><b>08:30 AM:</b> Detailed Fort History Tour with Guide</li>
-                    <li><b>01:30 PM:</b> Authentic Local Lunch</li>
-                    <li><b>10:00 PM:</b> Safe Arrival in Pune</li>`,
-                mumbaiTimeline: `
-                    <li><b>11:00 PM (22 Aug):</b> Mankhurd Station Pickup</li>
-                    <li><b>11:30 PM:</b> Vashi, Nerul, Panvel Pickup</li>
-                    <li><b>04:30 AM:</b> Arrival at Raigad Base</li>
-                    <li><b>08:30 AM:</b> Entry to Fort via Maha Darwaja</li>
-                    <li><b>01:30 PM:</b> Village Style Lunch</li>
-                    <li><b>09:30 PM:</b> Safe Arrival in Mumbai</li>`
+                puneTimeline: `<li><b>11:00 PM (22 Aug):</b> Karve Nagar Pickup</li><li><b>11:30 PM:</b> Warje, Chandni Chowk, Wakad Pickup</li><li><b>04:30 AM:</b> Reach Raigad Base</li><li><b>08:30 AM:</b> History Guide Tour</li><li><b>01:30 PM:</b> Local Lunch</li><li><b>10:00 PM:</b> Safe Arrival in Pune</li>`,
+                mumbaiTimeline: `<li><b>11:00 PM (22 Aug):</b> Mankhurd Station Pickup</li><li><b>11:30 PM:</b> Vashi, Panvel Pickup</li><li><b>04:30 AM:</b> Arrival at Base</li><li><b>08:30 AM:</b> Fort Exploration</li><li><b>01:30 PM:</b> Local Lunch</li><li><b>09:30 PM:</b> Safe Arrival in Mumbai</li>`
             },
             mr: {
                 title: "दुर्गराज किल्ले रायगड", subTitle: "अभ्यासपूर्ण भटकंती - २३ ऑगस्ट २०२६", price: "₹१४९९/- प्रति व्यक्ती",
                 cityLabel: "तुमचे शहर निवडा:", incTitle: "सहभागी बाबी", carryTitle: "काय सोबत आणावे?",
-                testTitle: "आमचे ट्रेकर्स काय म्हणतात", bookTitle: "आताच नोंदणी करा!",
+                testTitle: "आमचे ट्रेकर्स काय म्हणतात", instaTitle: "आमचे इंस्टाग्राम अपडेट्स", bookTitle: "आताच नोंदणी करा!",
                 incList: "<li>खाजगी बस प्रवास</li><li>गावरान नाश्ता आणि जेवण</li><li>व्यावसायिक इतिहास गाईड</li><li>अॅडव्हान्स पेमेंट अनिवार्य</li>",
                 carryList: "<li>२-३ लिटर पाणी (Must)</li><li>चांगल्या ग्रीपचे ट्रेकिंग शूज</li><li>रेनकोट / पाँजो</li><li>ओळखपत्र</li>",
                 puneTitle: "पुणे प्रवासाचा आराखडा", mumbaiTitle: "मुंबई प्रवासाचा आराखडा",
-                puneTimeline: `
-                    <li><b>११:०० PM (२२ ऑगस्ट):</b> कर्वे नगर येथून प्रवासाला सुरुवात</li>
-                    <li><b>११:३० PM:</b> पिकअप पॉईंट्स: वारजे, चांदणी चौक, वाकड</li>
-                    <li><b>०४:३० AM:</b> रायगड पायथा (पाचाड) येथे आगमन</li>
-                    <li><b>०८:३० AM:</b> प्रोफेशनल गाईडसोबत अभ्यासपूर्ण गडदर्शन</li>
-                    <li><b>०१:३० PM:</b> रुचकर गावरान दुपारचे जेवण</li>
-                    <li><b>१०:०० PM:</b> पुणे येथे सुखरूप आगमन</li>`,
-                mumbaiTimeline: `
-                    <li><b>११:०० PM (२२ ऑगस्ट):</b> मानखुर्द स्टेशन येथून प्रवासाला सुरुवात</li>
-                    <li><b>११:३० PM:</b> पिकअप पॉईंट्स: वाशी, नेरूळ, पनवेल</li>
-                    <li><b>०४:३० AM:</b> रायगड पायथा येथे आगमन</li>
-                    <li><b>०८:३० AM:</b> महादरवाजा मार्गे गडावर प्रवेश आणि गडदर्शन</li>
-                    <li><b>०१:३० PM:</b> चविष्ट गावरान जेवण</li>
-                    <li><b>०९:३० PM:</b> मुंबई येथे सुखरूप आगमन</li>`
+                puneTimeline: `<li><b>११:०० PM (२२ ऑगस्ट):</b> कर्वे नगर प्रवासाला सुरुवात</li><li><b>११:३० PM:</b> वारजे, चांदणी चौक, वाकड पिकअप</li><li><b>०४:३० AM:</b> रायगड पायथा आगमन</li><li><b>०८:३० AM:</b> अभ्यासपूर्ण गडदर्शन</li><li><b>०१:३० PM:</b> गावरान दुपारचे जेवण</li><li><b>१०:०० PM:</b> पुणे सुखरूप आगमन</li>`,
+                mumbaiTimeline: `<li><b>११:०० PM (२२ ऑगस्ट):</b> मानखुर्द स्टेशन प्रवासाला सुरुवात</li><li><b>११:३० PM:</b> वाशी, नेरूळ, पनवेल पिकअप</li><li><b>०४:३० AM:</b> पायथा आगमन</li><li><b>०८:३० AM:</b> गडावर प्रवेश</li><li><b>०१:३० PM:</b> चविष्ट जेवण</li><li><b>०९:३० PM:</b> मुंबई सुखरूप आगमन</li>`
             }
         };
 
@@ -222,19 +253,17 @@
             document.getElementById('inc-title').innerHTML = '<i class="fas fa-check-circle"></i> ' + content[lang].incTitle;
             document.getElementById('carry-title').innerHTML = '<i class="fas fa-backpack"></i> ' + content[lang].carryTitle;
             document.getElementById('test-title').innerText = content[lang].testTitle;
+            document.getElementById('insta-title').innerText = content[lang].instaTitle;
             document.getElementById('book-now').innerText = content[lang].bookTitle;
             document.getElementById('inc-list').innerHTML = content[lang].incList;
             document.getElementById('carry-list').innerHTML = content[lang].carryList;
             document.getElementById('pune-title').innerText = content[lang].puneTitle;
             document.getElementById('mumbai-title').innerText = content[lang].mumbaiTitle;
-            
-            // Injecting Timeline Content
             document.getElementById('pune-timeline-list').innerHTML = content[lang].puneTimeline;
             document.getElementById('mumbai-timeline-list').innerHTML = content[lang].mumbaiTimeline;
         }
 
-        // Initial Load (Default Marathi)
-        setLanguage('mr');
+        setLanguage('mr'); // Default Load
 
         function showCity(city) {
             document.querySelectorAll('.select-btn').forEach(b => b.classList.remove('active'));
