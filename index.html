@@ -10,80 +10,72 @@
             --primary: #e67e22; 
             --secondary: #2c3e50; 
             --light: #f8f9fa; 
-            --yellow: #f1c40f; /* पिवळा बॅकग्राउंड */
+            --yellow: #f1c40f; 
         }
         
         body { font-family: 'Poppins', sans-serif; margin: 0; background-color: var(--light); color: #333; }
         
-        /* Yellow Header Patch - Merged Style */
+        /* Yellow Header Patch */
         .top-header {
             background-color: var(--yellow);
-            padding: 8px 5%;
+            padding: 10px 5%; /* वर-खाली थोडी जागा वाढवली आहे */
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1001;
-            /* बॉर्डर किंवा शॅडो कमी केली आहे जेणेकरून ते नैसर्गिक वाटेल */
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
         }
 
+        /* लोगोची साईज वाढवली आहे */
         .logo-img {
-            height: 55px; /* लोगो थोडा मोठा केला आहे */
+            height: 85px; /* ५५ वरून ८५ केली आहे */
             width: auto;
-            /* बॉर्डर काढून टाकली आहे */
             border: none; 
             background: transparent;
             object-fit: contain;
+            transition: transform 0.3s;
         }
+        
+        .logo-img:hover { transform: scale(1.05); }
 
         .brand-name {
-            font-size: 1.1rem;
+            font-size: 1.3rem; /* फॉन्ट थोडा मोठा केला आहे */
             font-weight: 800;
             color: #2c3e50;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
 
-        .lang-bar {
-            display: flex;
-            gap: 5px;
-        }
-
+        .lang-bar { display: flex; gap: 8px; }
         .lang-btn {
-            border: 1px solid rgba(44, 62, 80, 0.3);
-            background: rgba(255, 255, 255, 0.5);
-            padding: 3px 10px;
+            border: 1px solid #2c3e50;
+            background: rgba(255,255,255,0.6);
+            padding: 5px 12px;
             cursor: pointer;
-            border-radius: 12px;
+            border-radius: 15px;
             font-weight: bold;
-            font-size: 0.75rem;
-            color: #2c3e50;
+            font-size: 0.85rem;
         }
-
-        .lang-btn.active {
-            background: #2c3e50;
-            color: white;
-            border-color: #2c3e50;
-        }
+        .lang-btn.active { background: #2c3e50; color: white; }
 
         /* Banner Section */
         header { 
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
                         url('https://lh3.googleusercontent.com/d/1VI3EcoO-VUXnt18q4o5_nqWTbqrOkELk');
             background-size: cover; background-position: center; color: white; text-align: center; 
-            padding: 110px 20px; min-height: 450px; display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            padding: 110px 20px; min-height: 400px; display: flex; flex-direction: column; justify-content: center; align-items: center; 
         }
 
         .price-tag { background: #c0392b; color: white; padding: 12px 30px; border-radius: 50px; font-size: 1.6rem; font-weight: bold; margin-top: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        .container { max-width: 1000px; margin: -60px auto 50px; background: white; border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; }
+        .container { max-width: 1000px; margin: -50px auto 50px; background: white; border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; }
         
         .city-selector { display: flex; gap: 15px; margin: 30px 0; justify-content: center; }
         .select-btn { flex: 1; padding: 15px; border: 2px solid #ddd; background: white; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px; transition: 0.3s; }
@@ -96,8 +88,9 @@
         @media (max-width: 768px) { 
             .grid { grid-template-columns: 1fr; } 
             header { min-height: 250px; padding: 50px 20px; }
-            .brand-name { font-size: 0.85rem; }
-            .logo-img { height: 45px; }
+            .brand-name { font-size: 0.9rem; }
+            .logo-img { height: 60px; } /* मोबाईलवर ६० साईज राहील */
+            .top-header { padding: 8px 3%; }
         }
         
         .card { padding: 25px; border-radius: 12px; background: #fdfdfd; border: 1px solid #eee; }
@@ -113,10 +106,8 @@
 </head>
 <body>
 
-    <!-- Yellow Header Patch -->
     <div class="top-header">
         <div class="logo-container">
-            <!-- Logo directly merged with yellow bg -->
             <img src="https://lh3.googleusercontent.com/d/1GQsrtJzOnmEw8ZfofivAcatdMKWcMFTO" alt="Logo" class="logo-img">
             <span class="brand-name">Trek & Travel with Sakhi</span>
         </div>
