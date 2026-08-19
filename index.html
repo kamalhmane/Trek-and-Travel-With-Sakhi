@@ -36,16 +36,16 @@
         .lang-btn { border: 1px solid #2c3e50; background: rgba(255,255,255,0.6); padding: 5px 12px; cursor: pointer; border-radius: 15px; font-weight: bold; font-size: 0.85rem; }
         .lang-btn.active { background: #2c3e50; color: white; }
 
-        /* Banner Section */
+        /* Banner Section - Padding increased significantly at bottom */
         header { 
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                         url('https://lh3.googleusercontent.com/d/1VI3EcoO-VUXnt18q4o5_nqWTbqrOkELk');
             background-size: cover; background-position: center; color: white; text-align: center; 
-            padding: 120px 20px 100px 20px; 
-            min-height: 450px; display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            padding: 120px 20px 140px 20px; /* खालच्या बाजूला 140px जागा दिली आहे */
+            min-height: 480px; display: flex; flex-direction: column; justify-content: center; align-items: center; 
         }
 
-        /* Price Button */
+        /* Price Button - Margin increased */
         .price-tag { 
             background: #c0392b; 
             color: white; 
@@ -53,17 +53,18 @@
             border-radius: 50px; 
             font-size: 1.8rem; 
             font-weight: bold; 
-            margin-top: 40px; 
-            margin-bottom: 20px; 
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4); 
+            margin-top: 50px; 
+            margin-bottom: 50px; /* बटण खाली 50px जागा सोडली आहे */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.5); 
             display: inline-block;
         }
 
+        /* White Container - Overlap reduced */
         .container { 
             max-width: 1000px; 
-            margin: -30px auto 50px; 
+            margin: -40px auto 50px; /* -50 ऐवजी -40 केल्याने वरची जागा वाढेल */
             background: white; 
-            border-radius: 15px; 
+            border-radius: 20px; 
             padding: 40px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
             position: relative; 
@@ -78,11 +79,10 @@
         
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 30px; }
         @media (max-width: 768px) { 
-            .grid { grid-template-columns: 1fr; } 
-            header { min-height: 350px; padding: 80px 20px 80px 20px; }
-            .brand-name { font-size: 0.9rem; }
-            .price-tag { font-size: 1.4rem; padding: 12px 30px; }
-            .container { padding: 25px; margin-top: -20px; }
+            header { min-height: 400px; padding: 80px 20px 120px 20px; }
+            .price-tag { font-size: 1.5rem; margin-bottom: 40px; }
+            .container { padding: 25px; margin-top: -30px; }
+            .grid { grid-template-columns: 1fr; }
         }
         
         .card { padding: 25px; border-radius: 12px; background: #fdfdfd; border: 1px solid #eee; }
@@ -110,7 +110,7 @@
     </div>
 
     <header>
-        <h1 id="main-title" style="font-size: 3rem; margin: 0;">दुर्गराज किल्ले रायगड</h1>
+        <h1 id="main-title" style="font-size: 3rem; margin: 0; text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">दुर्गराज किल्ले रायगड</h1>
         <p id="sub-title" style="font-size: 1.2rem; margin-top: 10px;">अभ्यासपूर्ण भटकंती - २३ ऑगस्ट २०२६</p>
         <div class="price-tag" id="price">₹१४९९/- प्रति व्यक्ती</div>
     </header>
@@ -149,15 +149,11 @@
         <div class="grid">
             <div class="card">
                 <h3 id="inc-title"><i class="fas fa-check-circle"></i> सहभागी बाबी</h3>
-                <ul id="inc-list" style="line-height: 1.8;">
-                    <!-- Update will happen via Script -->
-                </ul>
+                <ul id="inc-list" style="line-height: 1.8;"></ul>
             </div>
             <div class="card">
                 <h3 id="carry-title"><i class="fas fa-backpack"></i> काय सोबत आणावे?</h3>
-                <ul id="carry-list" style="line-height: 1.8;">
-                    <!-- Update will happen via Script -->
-                </ul>
+                <ul id="carry-list" style="line-height: 1.8;"></ul>
             </div>
         </div>
 
@@ -221,7 +217,6 @@
             document.getElementById('mumbai-title').innerText = content[lang].mumbaiTitle;
         }
 
-        // Initial Load Inclusions in Marathi
         document.getElementById('inc-list').innerHTML = content.mr.incList;
         document.getElementById('carry-list').innerHTML = content.mr.carryList;
 
