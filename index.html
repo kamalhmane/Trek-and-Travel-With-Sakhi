@@ -6,11 +6,11 @@
     <meta name="format-detection" content="telephone=no">
     <title>Trek & Travel with Sakhi - Raigad</title>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Poppins and Open Sans -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700;800&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- Swiper CSS for Slider -->
+    <!-- Swiper CSS for Testimonials Slider -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <style>
@@ -37,25 +37,58 @@
         }
 
         .logo-container { display: flex; align-items: center; gap: 12px; }
-        .logo-img { height: 70px; width: auto; object-fit: contain; }
-        .brand-name { font-family: 'Open Sans', sans-serif; font-size: 1.1rem; font-weight: 800; color: #2c3e50; text-transform: uppercase; letter-spacing: 0.5px; }
+        .logo-img { height: 75px; width: auto; object-fit: contain; }
+        
+        /* Logo Title in Open Sans */
+        .brand-name { 
+            font-family: 'Open Sans', sans-serif; 
+            font-size: 1.1rem; 
+            font-weight: 800; 
+            color: #2c3e50; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+        }
 
         .lang-bar { display: flex; gap: 8px; }
-        .lang-btn { border: 1px solid #2c3e50; background: rgba(255,255,255,0.6); padding: 4px 10px; cursor: pointer; border-radius: 15px; font-weight: bold; font-size: 0.8rem; }
+        .lang-btn { border: 1px solid #2c3e50; background: rgba(255,255,255,0.6); padding: 5px 12px; cursor: pointer; border-radius: 15px; font-weight: bold; font-size: 0.8rem; }
         .lang-btn.active { background: #2c3e50; color: white; }
 
-        /* Banner Section */
+        /* Banner Section - Price at Bottom */
         header { 
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
                         url('https://lh3.googleusercontent.com/d/1VI3EcoO-VUXnt18q4o5_nqWTbqrOkELk');
             background-size: cover; background-position: center; color: white; text-align: center; 
             padding: 100px 20px 40px 20px;
-            min-height: 480px; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; 
+            min-height: 500px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: flex-start;
+            align-items: center; 
         }
 
-        .price-tag { background: #c0392b; color: white; padding: 10px 30px; border-radius: 50px; font-size: 1.4rem; font-weight: bold; margin-top: auto; margin-bottom: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.4); display: inline-block; }
+        /* Reduced Price Button */
+        .price-tag { 
+            background: #c0392b; 
+            color: white; 
+            padding: 10px 30px; 
+            border-radius: 50px; 
+            font-size: 1.3rem; 
+            font-weight: bold; 
+            margin-top: auto; 
+            margin-bottom: 25px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4); 
+            display: inline-block;
+        }
 
-        .container { max-width: 1000px; margin: -20px auto 50px; background: white; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; }
+        .container { 
+            max-width: 1000px; 
+            margin: -20px auto 50px; 
+            background: white; 
+            border-radius: 20px; 
+            padding: 40px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+            position: relative; 
+        }
         
         .city-selector { display: flex; gap: 12px; margin: 25px 0; justify-content: center; }
         .select-btn { flex: 1; padding: 12px; border: 2px solid #ddd; background: white; border-radius: 10px; font-size: 1rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; }
@@ -64,25 +97,26 @@
         .itinerary-box { display: none; }
         .itinerary-box.active { display: block; animation: fadeIn 0.5s; }
         
-        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
-        .card { padding: 20px; border-radius: 12px; background: #fdfdfd; border: 1px solid #eee; }
         .timeline { list-style: none; padding: 0; }
         .timeline li { padding-left: 30px; border-left: 2px solid #eee; position: relative; padding-bottom: 20px; font-size: 0.9rem; }
         .timeline li::before { content: "\f111"; font-family: "Font Awesome 5 Free"; font-weight: 900; position: absolute; left: -9px; top: 0; background: white; color: var(--primary); font-size: 12px; }
 
-        /* Testimonials Section */
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px; }
+        .card { padding: 20px; border-radius: 12px; background: #fdfdfd; border: 1px solid #eee; }
+
+        /* Testimonials Section - Square Slider */
         .testimonials-section { margin-top: 40px; text-align: center; }
         .swiper { width: 100%; padding-top: 20px; padding-bottom: 50px; }
         .swiper-slide { width: 250px; height: 250px; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Instagram Section */
+        /* Instagram Section with Live LightWidget */
         .insta-section { margin-top: 50px; text-align: center; border-top: 1px solid #eee; padding-top: 40px; }
-        .insta-container { margin-top: 25px; border-radius: 12px; overflow: hidden; }
+        .insta-feed-container { margin-top: 25px; border-radius: 12px; overflow: hidden; min-height: 300px; }
         .btn-insta { display: inline-block; margin-top: 30px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; padding: 12px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; }
 
         .cta { text-align: center; margin-top: 40px; padding: 40px; background: var(--secondary); color: white; border-radius: 15px; }
-        .cta p { color: white !important; font-size: 1.1rem; margin-bottom: 10px; }
+        .cta p { color: white !important; font-size: 1.1rem; margin-bottom: 10px; text-decoration: none !important; }
         .btn-wa { background: #25d366; color: white; padding: 15px 35px; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: bold; font-size: 1.2rem; margin-top: 20px; }
 
         @media (max-width: 768px) { 
@@ -99,7 +133,7 @@
 </head>
 <body>
 
-    <!-- Yellow Header -->
+    <!-- Header Section -->
     <div class="top-header">
         <div class="logo-container">
             <img src="https://lh3.googleusercontent.com/d/1GQsrtJzOnmEw8ZfofivAcatdMKWcMFTO" alt="Logo" class="logo-img">
@@ -118,12 +152,14 @@
     </header>
 
     <div class="container">
+        <!-- City Selection -->
         <h3 style="text-align:center; color: var(--secondary);" id="select-city-label">तुमचे शहर निवडा:</h3>
         <div class="city-selector">
             <button class="select-btn active" id="btn-pune" onclick="showCity('pune')"><i class="fas fa-bus"></i> Pune (पुणे)</button>
             <button class="select-btn" id="btn-mumbai" onclick="showCity('mumbai')"><i class="fas fa-bus"></i> Mumbai (मुंबई)</button>
         </div>
 
+        <!-- Itinerary Sections -->
         <div id="pune-content" class="itinerary-box active">
             <h2 id="pune-title" style="color:var(--primary)">पुणे प्रवासाचा आराखडा</h2>
             <ul class="timeline" id="pune-timeline-list"></ul>
@@ -134,12 +170,13 @@
             <ul class="timeline" id="mumbai-timeline-list"></ul>
         </div>
 
+        <!-- Inclusions & Carry Items -->
         <div class="grid">
             <div class="card"><h3 id="inc-title"><i class="fas fa-check-circle"></i> सहभागी बाबी</h3><ul id="inc-list" style="line-height: 1.8;"></ul></div>
             <div class="card"><h3 id="carry-title"><i class="fas fa-backpack"></i> काय सोबत आणावे?</h3><ul id="carry-list" style="line-height: 1.8;"></ul></div>
         </div>
 
-        <!-- Testimonials Section -->
+        <!-- Testimonials Slider -->
         <div class="testimonials-section">
             <h2 id="test-title" style="color: var(--primary);">आमचे ट्रेकर्स काय म्हणतात</h2>
             <div class="swiper mySwiper">
@@ -157,10 +194,10 @@
             </div>
         </div>
 
-        <!-- Instagram Section with LightWidget -->
+        <!-- Instagram Live Feed Section -->
         <div class="insta-section">
             <h2 id="insta-title" style="color: var(--primary);">आमचे इंस्टाग्राम अपडेट्स</h2>
-            <div class="insta-container">
+            <div class="insta-feed-container">
                 <!-- LightWidget WIDGET -->
                 <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
                 <iframe src="//lightwidget.com/widgets/a7f47fb4eebf51bc8cfb52cfba58b341.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
@@ -170,6 +207,7 @@
             </a>
         </div>
 
+        <!-- Contact CTA -->
         <div class="cta">
             <h3 id="book-now" style="font-size: 1.8rem;">आताच नोंदणी करा!</h3>
             <p>संपर्क: +91-8104276237 (Sakhi)</p>
@@ -188,8 +226,8 @@
                 incList: "<li>Private AC/Non-AC Bus</li><li>Authentic Breakfast & Lunch</li><li>Professional History Guide</li><li>Advance Payment Compulsory</li>",
                 carryList: "<li>2-3 Liters Water (Must)</li><li>Good Grip Trekking Shoes</li><li>Raincoat / Poncho</li><li>ID Proof</li>",
                 puneTitle: "Pune Departure Schedule", mumbaiTitle: "Mumbai Departure Schedule",
-                puneTimeline: `<li><b>11:00 PM (22 Aug):</b> Karve Nagar Departure</li><li><b>11:30 PM:</b> Warje, Chandni Chowk, Wakad Pickup</li><li><b>04:30 AM:</b> Reach Raigad Base</li><li><b>08:30 AM:</b> Guided History Tour</li><li><b>01:30 PM:</b> Village Lunch</li><li><b>10:00 PM:</b> Safe Return to Pune</li>`,
-                mumbaiTimeline: `<li><b>11:00 PM (22 Aug):</b> Mankhurd Station Departure</li><li><b>11:30 PM:</b> Vashi, Nerul, Panvel Pickup</li><li><b>04:30 AM:</b> Arrival at Base</li><li><b>08:30 AM:</b> Fort Exploration</li><li><b>01:30 PM:</b> Local Authentic Lunch</li><li><b>09:30 PM:</b> Safe Return to Mumbai</li>`
+                puneTimeline: `<li><b>11:00 PM (22 Aug):</b> Karve Nagar Departure</li><li><b>11:30 PM:</b> Pickup at Warje, Chandni Chowk, Wakad</li><li><b>04:30 AM:</b> Reach Raigad Base</li><li><b>08:30 AM:</b> History Guide Tour</li><li><b>01:30 PM:</b> Village Style Lunch</li><li><b>10:00 PM:</b> Safe Arrival in Pune</li>`,
+                mumbaiTimeline: `<li><b>11:00 PM (22 Aug):</b> Mankhurd Station Departure</li><li><b>11:30 PM:</b> Pickup at Vashi, Panvel</li><li><b>04:30 AM:</b> Arrival at Base</li><li><b>08:30 AM:</b> Enter Fort via Maha Darwaja</li><li><b>01:30 PM:</b> Authentic Lunch</li><li><b>09:30 PM:</b> Safe Arrival in Mumbai</li>`
             },
             mr: {
                 title: "दुर्गराज किल्ले रायगड", subTitle: "अभ्यासपूर्ण भटकंती - २३ ऑगस्ट २०२६", price: "₹१४९९/- प्रति व्यक्ती",
@@ -225,7 +263,7 @@
             document.getElementById('mumbai-timeline-list').innerHTML = content[lang].mumbaiTimeline;
         }
 
-        setLanguage('mr');
+        setLanguage('mr'); // Default Load
 
         function showCity(city) {
             document.querySelectorAll('.select-btn').forEach(b => b.classList.remove('active'));
@@ -235,6 +273,7 @@
             document.getElementById(city + '-content').classList.add('active');
         }
 
+        // Testimonials Swiper
         var swiper = new Swiper(".mySwiper", {
             effect: "coverflow", grabCursor: true, centeredSlides: true, slidesPerView: "auto",
             coverflowEffect: { rotate: 20, stretch: 0, depth: 100, modifier: 1, slideShadows: false, },
