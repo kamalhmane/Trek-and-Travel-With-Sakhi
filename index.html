@@ -69,7 +69,7 @@
         }
         
         .city-selector { display: flex; gap: 12px; margin: 25px 0; justify-content: center; }
-        .select-btn { flex: 1; padding: 12px; border: 2px solid #ddd; background: white; border-radius: 10px; font-size: 1rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; }
+        .select-btn { flex: 1; padding: 15px; border: 2px solid #ddd; background: white; border-radius: 10px; font-size: 1rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; }
         .select-btn.active { border-color: var(--primary); background: #fff9f4; color: var(--primary); }
 
         .itinerary-box { display: none; }
@@ -88,7 +88,6 @@
         .swiper-slide { width: 250px; height: 250px; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Instagram Button Section */
         .insta-section { margin-top: 50px; text-align: center; border-top: 1px solid #eee; padding-top: 40px; }
         .btn-insta { 
             display: inline-block; margin-top: 15px; 
@@ -97,7 +96,6 @@
             border-radius: 50px; font-weight: bold; font-size: 1.1rem; transition: 0.3s;
         }
 
-        /* CTA Section - Fixed Mobile Color Issue */
         .cta { text-align: center; margin-top: 40px; padding: 40px; background: var(--secondary); color: white; border-radius: 15px; }
         .cta p { color: white !important; font-size: 1.1rem; margin-bottom: 10px; text-decoration: none !important; }
         .btn-wa { background: #25d366; color: white; padding: 15px 35px; text-decoration: none; border-radius: 50px; display: inline-block; font-weight: bold; font-size: 1.2rem; margin-top: 20px; }
@@ -140,13 +138,12 @@
             <button class="select-btn" id="btn-mumbai" onclick="showCity('mumbai')"><i class="fas fa-bus"></i> Mumbai (मुंबई)</button>
         </div>
 
-        <!-- Pune Itinerary Content -->
+        <!-- Pune Content - UPDATED to Karve Nagar Mahadev Mandir -->
         <div id="pune-content" class="itinerary-box active">
             <h2 id="pune-title" style="color:var(--primary)">पुणे प्रवासाचा आराखडा</h2>
             <ul class="timeline" id="pune-timeline-list"></ul>
         </div>
 
-        <!-- Mumbai Itinerary Content - UPDATED to Mankhurd Station -->
         <div id="mumbai-content" class="itinerary-box">
             <h2 id="mumbai-title" style="color:var(--primary)">मुंबई प्रवासाचा आराखडा</h2>
             <ul class="timeline" id="mumbai-timeline-list"></ul>
@@ -175,7 +172,6 @@
             </div>
         </div>
 
-        <!-- Instagram Section -->
         <div class="insta-section">
             <h2 id="insta-title" style="color: var(--primary);">आम्हाला इंस्टाग्रामवर फॉलो करा</h2>
             <a href="https://www.instagram.com/_with_sakhi" target="_blank" class="btn-insta">
@@ -202,14 +198,14 @@
                 carryList: "<li>2-3 Liters Water (Must)</li><li>Good Grip Trekking Shoes</li><li>Raincoat / Poncho</li><li>ID Proof</li>",
                 puneTitle: "Pune Departure Schedule", mumbaiTitle: "Mumbai Departure Schedule",
                 puneTimeline: `
-                    <li><b>10:30 PM:</b> Shivajinagar Pickup</li>
-                    <li><b>11:15 PM:</b> Wakad Pickup</li>
-                    <li><b>11:30 PM:</b> Start Journey towards Raigad</li>
+                    <li><b>11:00 PM:</b> Assemble at Karve Nagar (Mahadev Mandir)</li>
+                    <li><b>11:15 PM:</b> Start Journey</li>
+                    <li><b>11:30 PM - 12:30 AM:</b> Pickups: Warje Bridge, Chandni Chowk, Hinjewadi Wakad Bridge, Talegaon Toll Naka</li>
                     <li><b>04:30 AM:</b> Arrival at Raigad Base (Pachad)</li>
                     <li><b>06:30 AM:</b> Breakfast & Start Trek</li>
-                    <li><b>08:30 AM:</b> Detailed Fort History Tour</li>
-                    <li><b>01:30 PM:</b> Authentic Local Lunch</li>
-                    <li><b>10:00 PM:</b> Safe Return to Pune</li>`,
+                    <li><b>08:30 AM:</b> Guided History Tour</li>
+                    <li><b>01:30 PM:</b> Traditional Local Lunch</li>
+                    <li><b>10:00 PM:</b> Safe Arrival in Pune</li>`,
                 mumbaiTimeline: `
                     <li><b>11:00 PM (22 Aug):</b> Assemble at Mankhurd Station (West/Highway)</li>
                     <li><b>11:30 PM:</b> Departure (Pickups: Vashi, Nerul, Panvel)</li>
@@ -227,9 +223,9 @@
                 carryList: "<li>२-३ लिटर पाणी (Must)</li><li>चांगल्या ग्रीपचे ट्रेकिंग शूज</li><li>रेनकोट / पाँजो</li><li>ओळखपत्र</li>",
                 puneTitle: "पुणे प्रवासाचा आराखडा", mumbaiTitle: "मुंबई प्रवासाचा आराखडा",
                 puneTimeline: `
-                    <li><b>१०:३० PM:</b> शिवाजीनगर पिकअप</li>
-                    <li><b>११:१५ PM:</b> वाकड पिकअप</li>
-                    <li><b>११:३० PM:</b> रायगड पायथ्याकडे प्रवासाला सुरुवात</li>
+                    <li><b>११:०० PM:</b> कर्वे नगर (महादेव मंदिर) येथे एकत्रीकरण</li>
+                    <li><b>११:१५ PM:</b> प्रवासाला सुरुवात</li>
+                    <li><b>११:३० PM - १२:३० AM:</b> पिकअप पॉईंट्स: वारजे ब्रिज, चांदणी चौक, हिंजवडी वाकड ब्रिज, तळेगाव टोल नाका</li>
                     <li><b>०४:३० AM:</b> रायगड पायथा (पाचाड) येथे आगमन</li>
                     <li><b>०६:३० AM:</b> नाश्ता करून ट्रेकला सुरुवात</li>
                     <li><b>०८:३० AM:</b> व्यावसायिक गाईडसोबत गडदर्शन</li>
