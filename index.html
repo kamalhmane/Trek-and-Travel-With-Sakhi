@@ -69,7 +69,7 @@
         }
         
         .city-selector { display: flex; gap: 12px; margin: 25px 0; justify-content: center; }
-        .select-btn { flex: 1; padding: 15px; border: 2px solid #ddd; background: white; border-radius: 10px; font-size: 1rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; }
+        .select-btn { flex: 1; padding: 12px; border: 2px solid #ddd; background: white; border-radius: 10px; font-size: 1rem; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; }
         .select-btn.active { border-color: var(--primary); background: #fff9f4; color: var(--primary); }
 
         .itinerary-box { display: none; }
@@ -138,12 +138,13 @@
             <button class="select-btn" id="btn-mumbai" onclick="showCity('mumbai')"><i class="fas fa-bus"></i> Mumbai (मुंबई)</button>
         </div>
 
-        <!-- Pune Content - UPDATED to Karve Nagar Mahadev Mandir -->
+        <!-- Pune Itinerary -->
         <div id="pune-content" class="itinerary-box active">
             <h2 id="pune-title" style="color:var(--primary)">पुणे प्रवासाचा आराखडा</h2>
             <ul class="timeline" id="pune-timeline-list"></ul>
         </div>
 
+        <!-- Mumbai Itinerary -->
         <div id="mumbai-content" class="itinerary-box">
             <h2 id="mumbai-title" style="color:var(--primary)">मुंबई प्रवासाचा आराखडा</h2>
             <ul class="timeline" id="mumbai-timeline-list"></ul>
@@ -154,7 +155,6 @@
             <div class="card"><h3 id="carry-title"><i class="fas fa-backpack"></i> काय सोबत आणावे?</h3><ul id="carry-list" style="line-height: 1.8;"></ul></div>
         </div>
 
-        <!-- Testimonials -->
         <div class="testimonials-section">
             <h2 id="test-title" style="color: var(--primary);">आमचे ट्रेकर्स काय म्हणतात</h2>
             <div class="swiper mySwiper">
@@ -186,7 +186,6 @@
         </div>
     </div>
 
-    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         const content = {
@@ -200,14 +199,14 @@
                 puneTimeline: `
                     <li><b>11:00 PM:</b> Assemble at Karve Nagar (Mahadev Mandir)</li>
                     <li><b>11:15 PM:</b> Start Journey</li>
-                    <li><b>11:30 PM - 12:30 AM:</b> Pickups: Warje Bridge, Chandni Chowk, Hinjewadi Wakad Bridge, Talegaon Toll Naka</li>
+                    <li><b>11:30 PM - 12:30 AM:</b> Pickups: Warje, Chandni Chowk, Hinjewadi Wakad, Talegaon</li>
                     <li><b>04:30 AM:</b> Arrival at Raigad Base (Pachad)</li>
                     <li><b>06:30 AM:</b> Breakfast & Start Trek</li>
                     <li><b>08:30 AM:</b> Guided History Tour</li>
                     <li><b>01:30 PM:</b> Traditional Local Lunch</li>
-                    <li><b>10:00 PM:</b> Safe Arrival in Pune</li>`,
+                    <li><b>10:00 PM:</b> Safe Return to Pune</li>`,
                 mumbaiTimeline: `
-                    <li><b>11:00 PM (22 Aug):</b> Assemble at Mankhurd Station (West/Highway)</li>
+                    <li><b>11:00 PM (22 Aug):</b> Assemble Near Mankhurd Metro Station</li>
                     <li><b>11:30 PM:</b> Departure (Pickups: Vashi, Nerul, Panvel)</li>
                     <li><b>04:30 AM:</b> Arrival at Raigad Base (Pachad)</li>
                     <li><b>06:30 AM:</b> Breakfast & Briefing</li>
@@ -225,14 +224,14 @@
                 puneTimeline: `
                     <li><b>११:०० PM:</b> कर्वे नगर (महादेव मंदिर) येथे एकत्रीकरण</li>
                     <li><b>११:१५ PM:</b> प्रवासाला सुरुवात</li>
-                    <li><b>११:३० PM - १२:३० AM:</b> पिकअप पॉईंट्स: वारजे ब्रिज, चांदणी चौक, हिंजवडी वाकड ब्रिज, तळेगाव टोल नाका</li>
+                    <li><b>११:३० PM - १२:३० AM:</b> पिकअप पॉईंट्स: वारजे, चांदणी चौक, हिंजवडी वाकड, तळेगाव</li>
                     <li><b>०४:३० AM:</b> रायगड पायथा (पाचाड) येथे आगमन</li>
                     <li><b>०६:३० AM:</b> नाश्ता करून ट्रेकला सुरुवात</li>
                     <li><b>०८:३० AM:</b> व्यावसायिक गाईडसोबत गडदर्शन</li>
                     <li><b>०१:३० PM:</b> रुचकर गावरान दुपारचे जेवण</li>
                     <li><b>१०:०० PM:</b> पुणे येथे सुखरूप आगमन</li>`,
                 mumbaiTimeline: `
-                    <li><b>११:०० PM (२२ ऑगस्ट):</b> मानखुर्द स्टेशन (पश्चिम/हायवे जंक्शन) येथे एकत्रीकरण</li>
+                    <li><b>११:०० PM (२२ ऑगस्ट):</b> मानखुर्द मेट्रो स्टेशन जवळ एकत्रीकरण</li>
                     <li><b>११:३० PM:</b> प्रवासाला सुरुवात (पिकअप: वाशी, नेरूळ, पनवेल)</li>
                     <li><b>०४:३० AM:</b> रायगड पायथा (पाचाड) येथे आगमन</li>
                     <li><b>०६:३० AM:</b> नाश्ता करून ट्रेकला सुरुवात</li>
