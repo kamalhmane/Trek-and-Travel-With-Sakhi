@@ -1,6 +1,6 @@
 ---
 name: ig-viral
-description: Generate Instagram Reel/video ideas built to maximise reach, with hooks, shot lists, captions and a posting plan. Use when the user asks for Instagram video ideas, Reel ideas, viral content ideas, hooks, or a weekly Instagram content plan (e.g. "/ig-viral give me 3 video ideas for this week").
+description: "Generate Instagram Reel/video ideas built to maximise reach, with hooks, shot lists, captions and a posting plan. Use when the user asks for Instagram video ideas, Reel ideas, viral content ideas, hooks, or a weekly Instagram content plan (e.g. \"/ig-viral give me 3 video ideas for this week\")."
 ---
 
 # Instagram viral video ideas
@@ -9,20 +9,10 @@ Produce ready-to-shoot Instagram Reel ideas for the user's account.
 
 ## 1. The account
 
-Instagram: @_with_sakhi (Trek & Travel with Sakhi).
+Read `.claude/ig-brands.md` first for the brands, voice, language and rules. If it is missing, ask the user for the account, niche, audience and language.
 
-- Niche: guided treks and study tours ("अभ्यासपूर्ण भटकंती") to Sahyadri
-  forts and other places in Maharashtra, such as Raigad.
-- Audience: Marathi-speaking trekkers and families, mainly from Pune and
-  Mumbai. Trips leave from both cities.
-- Goal of the content: reach new trekkers and turn them into bookings,
-  which happen over WhatsApp.
-- Voice: warm, proud of Maratha history and the forts, practical.
-- On-screen text and captions: Marathi first, with English where it helps.
-- Read `index.html` for the current trip, date and price before writing
-  ideas, and tie at least one idea to the next trip when one is listed.
-- Fit the season: monsoon greenery (June–September), clear winter views
-  and sunrise treks (November–February), heat and night treks in summer.
+For Trek & Travel with Sakhi, read `index.html` for the current trip, date
+and price, and tie at least one idea to the next trip when one is listed.
 
 ## 2. Parse the request
 
