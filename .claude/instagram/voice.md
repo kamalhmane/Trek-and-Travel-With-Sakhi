@@ -13,8 +13,10 @@ changes: paths point at `.claude/instagram/` in this repository instead of
 
 ## Which account
 
-If the user does not say, use the account the conversation is already about.
-If that is unclear, ask once. Never mix the two in one post.
+**Work only on TouriKo (@touri.ko).** The owner asked on 17 Nov 2026 for all
+Instagram work to be for the TouriKo page only. Do not plan, write or design
+for Trek & Travel with Sakhi unless the owner asks for it by name in that
+request. Its details stay below for reference only.
 
 ## Account 1: TouriKo
 
@@ -29,7 +31,7 @@ If that is unclear, ask once. Never mix the two in one post.
 - **What it sells:** treks and trips. Bookings by Instagram DM, unless the
   user gives a phone or WhatsApp number.
 
-## Account 2: Trek & Travel with Sakhi
+## Account 2: Trek & Travel with Sakhi (paused, reference only)
 
 - **Handle:** @_with_sakhi (about 14k followers, as of November 2026)
 - **What it does, in one sentence:** Guided treks and study tours
@@ -45,7 +47,7 @@ If that is unclear, ask once. Never mix the two in one post.
 ## Who both accounts talk to
 
 Marathi-speaking trekkers and families, mainly in Pune and Mumbai, from
-first-timers to regular weekend trekkers.
+first-timers to regular weekend trekkers. (This applies to TouriKo.)
 
 ## What we sound like
 

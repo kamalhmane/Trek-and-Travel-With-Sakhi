@@ -9,7 +9,7 @@ description: >-
   comment, reply or DM is shown to the user.
 ---
 
-> **Local setup:** read `.claude/instagram/voice.md` first. It covers the two accounts (TouriKo and Trek & Travel with Sakhi), the Marathi rules, and which bundled tools give trustworthy results on Marathi text.
+> **Local setup:** read `.claude/instagram/voice.md` first. It says to work only on TouriKo (@touri.ko), and covers, the Marathi rules, and which bundled tools give trustworthy results on Marathi text.
 
 # ig-human
 
