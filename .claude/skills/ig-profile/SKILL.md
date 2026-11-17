@@ -8,7 +8,7 @@ description: >-
   it reads.
 ---
 
-> **Local setup:** read `.claude/instagram/voice.md` first. It says to work only on TouriKo (@touri.ko), and covers, the Marathi rules, and which bundled tools give trustworthy results on Marathi text.
+> **Local setup:** read `.claude/instagram/voice.md` first. It says to work only on TouriKo (@touri.ko), and covers the brand, the Marathi rules, and which bundled tools give trustworthy results on Marathi text.
 
 # ig-profile
 
